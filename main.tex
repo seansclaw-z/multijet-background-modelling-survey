@@ -9,6 +9,9 @@
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage{enumitem}
 \setlist{nosep}
 \hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
@@ -22,6 +25,46 @@ This note surveys practical data-driven strategies for modelling multijet backgr
 \end{abstract}
 \tableofcontents
 \newpage
+
+\section*{Visual guide to the main background-modelling ideas}
+\addcontentsline{toc}{section}{Visual guide to the main background-modelling ideas}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/fig1_smooth_continuum_fit.pdf}
+\caption{Smooth-continuum mass fit. This is the CMS-style logic for VBF $H\to b\bar b$: QCD is a smooth falling continuum in $m_{bb}$, while $Z\to b\bar b$ and $H\to b\bar b$ appear as localized resonant structures. Sidebands and bias studies test whether the smooth continuum model can fake or absorb a Higgs-like bump.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.72\linewidth]{figures/fig2_abcd_method.pdf}
+\caption{ABCD method. Two approximately independent variables define three control regions and one signal region. The signal-region multijet yield is inferred as $N_A \simeq \kappa N_BN_C/N_D$, where $\kappa$ corrects residual correlations.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.90\linewidth]{figures/fig3_pass_fail_method.pdf}
+\caption{Pass/fail or tag-rate method. A background-rich fail region constrains the QCD shape. A pass-to-fail ratio, measured or fitted in control data and sidebands, transfers this prediction into the tag-passing signal region.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/fig4_decorrelated_classifier.pdf}
+\caption{Mass sculpting versus decorrelation. A normal classifier may change the background mass shape across score bins. An adversarial or otherwise decorrelated classifier tries to make the background $m_{bb}$ shape stable across categories, enabling a shared-shape template as in the ATLAS VBF $H\to b\bar b$ strategy.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.90\linewidth]{figures/fig5_fake_factor_flow.pdf}
+\caption{Fake-factor / matrix-method logic. A loose or anti-tight object selection gives a fake-enriched data sample. After prompt subtraction and parameterization in relevant kinematics, fake factors or real/fake efficiencies predict the tight signal-region fake background.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.90\linewidth]{figures/fig6_rebalance_smear.pdf}
+\caption{Rebalance-and-smear. For all-hadronic searches with large missing transverse momentum, low-MET multijet data are rebalanced to approximate the underlying QCD event and then smeared with jet response functions to predict fake-MET tails.}
+\end{figure}
+\clearpage
 \section{Executive summary}
 
 Multijet background modelling is one of the central experimental problems in hadron-collider analyses. The core difficulty is not that QCD multijet production is conceptually unknown, but that the regions relevant for many searches and Higgs measurements are rare, highly selected tails: jets misidentified as heavy-flavour jets, jets faking leptons or photons, ordinary QCD events acquiring large apparent missing transverse momentum, or smooth QCD continuum events entering a narrow mass window. These tails are sensitive to flavour composition, detector response, trigger biases, jet energy calibration, tagging algorithms, and correlations introduced by multivariate classifiers. For this reason, ATLAS and CMS rarely rely on pure QCD simulation for the final multijet estimate.
