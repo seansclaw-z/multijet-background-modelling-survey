@@ -135,3 +135,25 @@ ax.set_xlim(0,1); ax.set_ylim(0,1)
 savefig('fig6_rebalance_smear')
 
 print('wrote figures')
+
+# 7. HH->bbbb NN density-ratio reweighting
+fig,ax=plt.subplots(figsize=(8.6,4.2)); ax.axis('off')
+def box2(x,y,w,h,text,color):
+    ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle='round,pad=0.02,rounding_size=0.04',facecolor=color,alpha=0.35,edgecolor='k'))
+    ax.text(x+w/2,y+h/2,text,ha='center',va='center',fontsize=9.5)
+def arr(x1,y1,x2,y2,label=None):
+    ax.add_patch(FancyArrowPatch((x1,y1),(x2,y2),arrowstyle='->',mutation_scale=15,lw=1.5,color='k'))
+    if label: ax.text((x1+x2)/2,(y1+y2)/2+0.07,label,ha='center',fontsize=9)
+box2(0.05,0.62,0.20,0.22,'2b data in CR\nbackground-rich','#aec7e8')
+box2(0.05,0.22,0.20,0.22,'4b data in CR\ntarget domain','#ffbb78')
+box2(0.38,0.43,0.24,0.24,'Train NN density-ratio\n$w(x)=p_{4b}(x)/p_{2b}(x)$','#c7c7c7')
+box2(0.72,0.62,0.20,0.22,'2b data in SR\napplication sample','#aec7e8')
+box2(0.72,0.22,0.20,0.22,'Predicted 4b SR\nmultijet background','#98df8a')
+arr(0.25,0.73,0.38,0.56)
+arr(0.25,0.33,0.38,0.50)
+arr(0.62,0.55,0.72,0.73,'apply weights')
+arr(0.82,0.62,0.82,0.44)
+ax.text(0.50,0.12,'ATLAS HH→bbbb: low-b-tag data are transformed into high-b-tag background estimates using NN reweighting; ensembles/bootstrap give training-stability uncertainty.',ha='center',fontsize=9)
+ax.set_title('ML density-ratio reweighting for HH→bbbb multijet background',fontsize=13)
+ax.set_xlim(0,1); ax.set_ylim(0,1)
+savefig('fig7_hhbbbb_nn_reweighting')

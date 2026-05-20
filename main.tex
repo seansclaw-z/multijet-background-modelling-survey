@@ -55,6 +55,12 @@ This note surveys practical data-driven strategies for modelling multijet backgr
 
 \begin{figure}[htbp]
 \centering
+\includegraphics[width=0.92\linewidth]{figures/fig7_hhbbbb_nn_reweighting.pdf}
+\caption{Neural-network density-ratio reweighting for HH$\to b\bar b b\bar b$. In the ATLAS nonresonant HH$\to4b$ analysis, a neural network learns a reweighting function from 2b and 4b data in a control region, then applies it to 2b events in the signal region to predict the 4b multijet background.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
 \includegraphics[width=0.90\linewidth]{figures/fig5_fake_factor_flow.pdf}
 \caption{Fake-factor / matrix-method logic. A loose or anti-tight object selection gives a fake-enriched data sample. After prompt subtraction and parameterization in relevant kinematics, fake factors or real/fake efficiencies predict the tight signal-region fake background.}
 \end{figure}
@@ -600,6 +606,7 @@ When evaluating a multijet background model, ask:
 \paragraph{6.} CMS Collaboration, ``Search for low mass vector resonances decaying into quark-antiquark pairs in proton-proton collisions at $\\sqrt{s}$ = 13 TeV,'' arXiv:1710.00159, JHEP 01 (2018) 097. Useful for smooth jet-mass background fitting and boosted-resonance context.
 \paragraph{7.} CMS Collaboration, ``Search for supersymmetry in multijet events with missing transverse momentum in proton-proton collisions at 13 TeV,'' Phys. Rev. D 96 (2017) 032003. Representative of rebalance-and-smear-style QCD fake-MET estimation.
 \paragraph{8.} CMS Open Data Guide, ``Background modelling'' and ABCD-method materials. Useful pedagogical reference for ABCD and transfer-factor ideas.
+\paragraph{9.} ATLAS Collaboration, ``Search for nonresonant pair production of Higgs bosons in the $b\bar b b\bar b$ final state in $pp$ collisions at $\sqrt{s}=13$ TeV with the ATLAS detector,'' arXiv:2301.03212, Phys. Rev. D 108 (2023) 052003. Representative of neural-network density-ratio reweighting for 2b-to-4b multijet background prediction.
 
 \bigskip\hrule\bigskip
 
