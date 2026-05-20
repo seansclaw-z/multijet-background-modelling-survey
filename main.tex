@@ -42,7 +42,7 @@ The three papers discussed in the conversation illustrate three different points
 \begin{itemize}
 \item \textbf{CMS VBF H(bb), arXiv:2308.01253}: QCD multijet is treated as a smooth continuum in the b-jet-pair invariant mass, modelled directly in data using an exponential times polynomial function in each category. The function order is selected using sidebands and an F-test; bias is checked with pseudo-data from alternative functions.
 \item \textbf{ATLAS VBF H(bb), arXiv:2011.08280}: an adversarial neural network is trained to classify VBF-like events while being decorrelated from the bb invariant mass. This allows the non-resonant multijet mass shape to be shared across ANN-score regions within a channel and constrained primarily by the low-score, high-statistics region. Residual shape bias is evaluated in dedicated control regions.
-\item \textbf{HWW entanglement paper, arXiv:2605.19754}: this is not mainly a multijet-background paper. It uses MC templates for WW, ttbar, and Z$\to$ττ with normalization and unfolding-shape nuisance parameters. It is useful as an example of profile-likelihood template fitting, but its background treatment is not a full data-driven multijet estimate.
+\item \textbf{HWW entanglement paper, arXiv:2605.19754}: this is not mainly a multijet-background paper. It uses MC templates for WW, ttbar, and Z$\to$$\tau$$\tau$ with normalization and unfolding-shape nuisance parameters. It is useful as an example of profile-likelihood template fitting, but its background treatment is not a full data-driven multijet estimate.
 \end{itemize}
 
 A useful way to summarize the field is: \textbf{if the background is smooth under a narrow signal peak, fit it from data; if the background enters through fake objects, measure fake rates in data; if the background is defined by a tagger, use pass/fail or tag-rate transfer factors; if a classifier is used, decorrelate it from the final mass variable or validate the induced sculpting; if fake MET is the issue, model detector response directly.}
@@ -55,7 +55,7 @@ QCD multijet production has an enormous cross section at the LHC. In many analys
 
 \begin{itemize}
 \item light- or charm-flavour jets are misidentified as b jets;
-\item jets fake isolated leptons, photons, or hadronic τ candidates;
+\item jets fake isolated leptons, photons, or hadronic $\tau$ candidates;
 \item heavy-flavour decays produce non-prompt leptons;
 \item jet energy mismeasurement creates large apparent missing transverse momentum;
 \item boosted-object taggers select rare two-prong or heavy-flavour-like QCD jets;
@@ -190,7 +190,7 @@ This method trades functional-form uncertainty for a decorrelation assumption: i
 
 \subsection{3.5 Resonant Z$\to$bb background}
 
-ATLAS estimates the Z$\to$bb resonant background using a Z$\to$μμ embedding method. Z$\to$μμ data events are selected, the muons are replaced with simulated b-quark showers with matching four-vectors, and the modified events are passed through reconstruction, selection, and categorization. This provides a data-driven handle on the event environment while modelling the b-jet showering with simulation. A 20\% non-closure uncertainty is assigned based on validation studies.
+ATLAS estimates the Z$\to$bb resonant background using a Z$\to$$\mu$$\mu$ embedding method. Z$\to$$\mu$$\mu$ data events are selected, the muons are replaced with simulated b-quark showers with matching four-vectors, and the modified events are passed through reconstruction, selection, and categorization. This provides a data-driven handle on the event environment while modelling the b-jet showering with simulation. A 20\% non-closure uncertainty is assigned based on validation studies.
 
 \subsection{3.6 Shape-bias control regions}
 
@@ -226,18 +226,18 @@ The procedure tests whether using a common non-resonant shape can generate a fak
 
 This paper is useful for comparison because it uses a profile-likelihood template strategy, but it is not primarily a multijet-background modelling paper.
 
-The signal process is H$\to$WW*$\to$ℓνℓν. The dominant backgrounds considered are non-resonant WW, ttbar, and Z$\to$ττ. The analysis constructs a continuous CGLMP-inspired observable \(I_3\) and performs a template-shape hypothesis test between entangled and separable signal hypotheses.
+The signal process is H$\to$WW*$\to$$\ell$$\nu$$\ell$$\nu$. The dominant backgrounds considered are non-resonant WW, ttbar, and Z$\to$$\tau$$\tau$. The analysis constructs a continuous CGLMP-inspired observable \(I_3\) and performs a template-shape hypothesis test between entangled and separable signal hypotheses.
 
 The background model is based on MC templates with nuisance parameters:
 
 \begin{itemize}
 \item WW normalization uncertainty: 20\%,
 \item ttbar normalization uncertainty: 10\%,
-\item Z$\to$ττ normalization uncertainty: 15\%,
+\item Z$\to$$\tau$$\tau$ normalization uncertainty: 15\%,
 \item additional shape uncertainties from cDDPM unfolding closure residuals.
 \end{itemize}
 
-This is a useful example of HistFactory/RooFit-style simultaneous template fitting, but it is not a complete data-driven background estimate. A full experimental HWW analysis would also need data-driven control regions for WW, ttbar, Z$\to$ττ, and fake/non-prompt lepton backgrounds. In particular, fake-lepton or multijet backgrounds would usually require fake-factor, matrix-method, or same-sign control-region techniques.
+This is a useful example of HistFactory/RooFit-style simultaneous template fitting, but it is not a complete data-driven background estimate. A full experimental HWW analysis would also need data-driven control regions for WW, ttbar, Z$\to$$\tau$$\tau$, and fake/non-prompt lepton backgrounds. In particular, fake-lepton or multijet backgrounds would usually require fake-factor, matrix-method, or same-sign control-region techniques.
 
 \bigskip\hrule\bigskip
 
@@ -368,7 +368,7 @@ N_A = \kappa \frac{N_B N_C}{N_D}.
 
 \subsection{5.5 Matrix method and fake-factor method}
 
-These are most relevant when multijet enters through fake or non-prompt leptons, photons, or τ candidates.
+These are most relevant when multijet enters through fake or non-prompt leptons, photons, or $\tau$ candidates.
 
 \textbf{Matrix method}: define loose and tight object selections. Measure the probability for real and fake loose objects to pass tight criteria, then solve for the fake contribution in the tight region.
 
@@ -377,7 +377,7 @@ These are most relevant when multijet enters through fake or non-prompt leptons,
 \textbf{Advantages}
 
 \begin{itemize}
-\item Standard tools for fake-lepton and fake-τ backgrounds.
+\item Standard tools for fake-lepton and fake-$\tau$ backgrounds.
 \item Mostly data-driven.
 \item Can estimate both yield and shape using anti-ID data.
 \end{itemize}
@@ -393,13 +393,13 @@ These are most relevant when multijet enters through fake or non-prompt leptons,
 
 \subsection{5.6 Same-sign methods}
 
-\textbf{Basic idea}: use same-sign lepton or τ pairs as a fake-enriched control region and extrapolate to opposite-sign signal regions using an OS/SS ratio.
+\textbf{Basic idea}: use same-sign lepton or $\tau$ pairs as a fake-enriched control region and extrapolate to opposite-sign signal regions using an OS/SS ratio.
 
 \textbf{Advantages}
 
 \begin{itemize}
 \item Simple and data-driven.
-\item Useful for dilepton or τ analyses.
+\item Useful for dilepton or $\tau$ analyses.
 \item Signal contamination is often small in the same-sign region.
 \end{itemize}
 
@@ -497,11 +497,11 @@ Method & Basic idea & Best suited for & Strengths & Main limitations \\ \hline
 Smooth analytic fit & Fit a smooth mass spectrum directly in data & Bump hunts, H$\to$bb, dijet/diphoton searches & Transparent, data-driven, standard & Function choice, mass sculpting, sideband statistics \\ \hline
 Shared template + decorrelated classifier & Make classifier independent of final mass, share QCD shape across regions & MVA-based bump hunts & Uses high-stat control regions, avoids arbitrary function & Decorrelating classifier is hard; shared-shape assumption needs validation \\ \hline
 Sideband / transfer factor & Extrapolate from signal-depleted data to signal region & Many searches & Flexible and data-driven & Transfer-factor closure and signal contamination \\ \hline
-Pass/fail / tag-rate & Predict tagged region from untagged or fail-tag data & Boosted objects, b-tag, τ-tag, photon fake & Natural for tagger analyses & Tagger-mass correlations, high-dimensional dependence \\ \hline
+Pass/fail / tag-rate & Predict tagged region from untagged or fail-tag data & Boosted objects, b-tag, $\tau$-tag, photon fake & Natural for tagger analyses & Tagger-mass correlations, high-dimensional dependence \\ \hline
 ABCD & Infer SR from three CRs using two uncorrelated variables & QCD/fake backgrounds & Simple, robust if independent & Variable correlations dominate uncertainty \\ \hline
 Matrix method & Solve loose/tight real/fake equations & Fake leptons & Standard and data-driven & Fake-rate dependence and composition mismatch \\ \hline
-Fake-factor method & Apply tight/anti-tight ratio to fail-ID events & Fake τ, fake lepton, fake photon & Shape can come from data & Anti-ID to ID transfer uncertainty \\ \hline
-Same-sign method & Use SS data to predict OS fake background & Dilepton/τ fake estimates & Simple fake-enriched CR & OS/SS ratio systematics \\ \hline
+Fake-factor method & Apply tight/anti-tight ratio to fail-ID events & Fake $\tau$, fake lepton, fake photon & Shape can come from data & Anti-ID to ID transfer uncertainty \\ \hline
+Same-sign method & Use SS data to predict OS fake background & Dilepton/$\tau$ fake estimates & Simple fake-enriched CR & OS/SS ratio systematics \\ \hline
 Rebalance and smear & Rebalance low-MET data and smear jets & QCD fake MET & Targets detector response tails & Complex; response tails critical \\ \hline
 Low-tag to high-tag reweighting & Reweight 2-tag data to model 4-tag data & HH$\to$bbbb, multi-b & Uses real multijet data & Flavour-composition transfer \\ \hline
 ML generative/reweighting & Learn high-dimensional transfer or background density & Complex final states & Powerful correlations & Trust, validation, systematics \\ \hline
@@ -546,17 +546,17 @@ When evaluating a multijet background model, ask:
 
 \subsection{Core papers discussed}
 
-\paragraph{1.} CMS Collaboration, “Measurement of the Higgs boson production via vector boson fusion and its decay into bottom quarks in proton-proton collisions at $\sqrt{}$s = 13 TeV,” arXiv:2308.01253, JHEP 01 (2024) 173.
-\paragraph{2.} ATLAS Collaboration, “Measurements of Higgs bosons decaying to bottom quarks from vector boson fusion production with the ATLAS experiment at $\sqrt{}$s = 13 TeV,” arXiv:2011.08280, Eur. Phys. J. C 81 (2021) 537.
-\paragraph{3.} V. Croft et al., “Hypothesis Tests for Observing Quantum Entanglement in H$\to$WW* at the LHC,” arXiv:2605.19754.
+\paragraph{1.} CMS Collaboration, ``Measurement of the Higgs boson production via vector boson fusion and its decay into bottom quarks in proton-proton collisions at $\\sqrt{s}$ = 13 TeV,'' arXiv:2308.01253, JHEP 01 (2024) 173.
+\paragraph{2.} ATLAS Collaboration, ``Measurements of Higgs bosons decaying to bottom quarks from vector boson fusion production with the ATLAS experiment at $\\sqrt{s}$ = 13 TeV,'' arXiv:2011.08280, Eur. Phys. J. C 81 (2021) 537.
+\paragraph{3.} V. Croft et al., ``Hypothesis Tests for Observing Quantum Entanglement in H$\to$WW* at the LHC,'' arXiv:2605.19754.
 
 \subsection{Additional representative analyses and method examples}
 
-\paragraph{4.} CMS Collaboration, “Inclusive search for a highly boosted Higgs boson decaying to a bottom quark-antiquark pair,” arXiv:1709.05543, Phys. Rev. Lett. 120 (2018) 071802.
-\paragraph{5.} ATLAS Collaboration, “Search for pair production of Higgs bosons in the bbbb final state in proton-proton collisions at $\sqrt{}$s = 13 TeV with the ATLAS detector,” arXiv:1804.06174.
-\paragraph{6.} CMS Collaboration, “Search for low mass vector resonances decaying into quark-antiquark pairs in proton-proton collisions at $\sqrt{}$s = 13 TeV,” arXiv:1710.00159, JHEP 01 (2018) 097. Useful for smooth jet-mass background fitting and boosted-resonance context.
-\paragraph{7.} CMS Collaboration, “Search for supersymmetry in multijet events with missing transverse momentum in proton-proton collisions at 13 TeV,” Phys. Rev. D 96 (2017) 032003. Representative of rebalance-and-smear-style QCD fake-MET estimation.
-\paragraph{8.} CMS Open Data Guide, “Background modelling” and ABCD-method materials. Useful pedagogical reference for ABCD and transfer-factor ideas.
+\paragraph{4.} CMS Collaboration, ``Inclusive search for a highly boosted Higgs boson decaying to a bottom quark-antiquark pair,'' arXiv:1709.05543, Phys. Rev. Lett. 120 (2018) 071802.
+\paragraph{5.} ATLAS Collaboration, ``Search for pair production of Higgs bosons in the bbbb final state in proton-proton collisions at $\\sqrt{s}$ = 13 TeV with the ATLAS detector,'' arXiv:1804.06174.
+\paragraph{6.} CMS Collaboration, ``Search for low mass vector resonances decaying into quark-antiquark pairs in proton-proton collisions at $\\sqrt{s}$ = 13 TeV,'' arXiv:1710.00159, JHEP 01 (2018) 097. Useful for smooth jet-mass background fitting and boosted-resonance context.
+\paragraph{7.} CMS Collaboration, ``Search for supersymmetry in multijet events with missing transverse momentum in proton-proton collisions at 13 TeV,'' Phys. Rev. D 96 (2017) 032003. Representative of rebalance-and-smear-style QCD fake-MET estimation.
+\paragraph{8.} CMS Open Data Guide, ``Background modelling'' and ABCD-method materials. Useful pedagogical reference for ABCD and transfer-factor ideas.
 
 \bigskip\hrule\bigskip
 
